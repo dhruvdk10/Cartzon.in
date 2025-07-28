@@ -5,16 +5,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cartzon.in - Orders</title>
+    <title>KC Football Academy - Login</title>
     <script src="https://kit.fontawesome.com/da1a8618a8.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
       body {
         font-family: sans-serif;
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        background-color: white;
+        background-color: whitesmoke;
       }
 
       marquee {
@@ -29,144 +34,46 @@
         border: none;
       }
 
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
-      body {
-        font-family: Arial, sans-serif;
-        background-color: white;
-      }
-
-      .navbar {
-        background-color: #1b2b3e;
+      nav.nav1 {
         display: flex;
         align-items: center;
-        padding: 10px 20px;
-        color: white;
         justify-content: space-between;
-        flex-wrap: wrap;
+        background-color: #1b2b3e;
+        height: 60px;
+        padding: 0px 260px;
       }
 
-      .location {
-        color: #ccc;
-        font-size: 10px;
-        ;
-      }
-
-      .navbar .location,
-      .navbar .account,
-      .navbar .orders,
-      .navbar .cart {
-        display: flex;
-        align-items: center;
-        gap: 7px;
-        font-size: 14px;
-        cursor: pointer;
-      }
-
-      .navbar .nav-search {
-        display: flex;
-        flex: 1;
-        margin: 0 15px;
-        max-width: 600px;
-      }
-
-      .navbar select {
-        padding: 2px;
-        width: 50px;
-        text-align: center;
-        background-color: #ccc;
-        border: none;
-        border-radius: 4px 0 0 4px;
-      }
-
-      .navbar input {
-        flex: 1;
-        padding: 10px;
-        background-color: whitesmoke;
-        border: none;
-        outline: none;
-      }
-
-      .navbar button {
-        background-color: rgb(15, 155, 225);
-        border: none;
-        padding: 10px 15px;
-        border-radius: 0 4px 4px 0;
-        cursor: pointer;
-      }
-
-      .navbar .icon {
-        font-size: 20px;
+      li {
         display: flex;
         align-items: center;
       }
 
-      .subnav {
-        background-color: #131a22;
-        padding: 10px 20px;
+      ul.top {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+        padding: 0;
+        margin: 0;
+        font-size: 22px;
+      }
+
+      ul.bottom {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 35px;
+        padding: 0;
+        margin: 0;
+      }
+
+      select {
+        background-color: #1b2b3e;
         color: white;
-        font-size: 14px;
-        display: flex;
-        gap: 30px;
-        align-items: center;
-        flex-wrap: wrap;
-      }
-
-      .subnav .dropdown {
-        position: relative;
-        display: inline-block;
-      }
-
-      .subnav .dropdown-content {
-        display: none;
-        position: absolute;
-        left: 0;
-        top: 110%;
-        background-color: whitesmoke;
-        min-width: 180px;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-        z-index: 100;
-        border-radius: 8px;
-        padding: 10px 0;
-      }
-
-      .subnav .dropdown-content a {
-        color: black;
-        padding: 10px 20px;
-        background-color: whitesmoke;
-        text-decoration: none;
-        display: block;
-        transition: background 0.2s, color 0.2s, transform 0.2s;
-        border-radius: 0;
-      }
-
-      .subnav .dropdown-content a:hover {
-        background: #bdbdbd;
-        color: #232323;
-        transform: scale(1);
-      }
-
-      .subnav .dropdown:hover .dropdown-content {
-        display: block;
-      }
-
-      .subnav .dropdown:hover>a {
-        color: #ffffff;
-        border-radius: 8px 8px 0 0;
-      }
-
-      .subnav a {
-        color: white;
-        text-decoration: none;
-        transition: color 0.2s;
-      }
-
-      .subnav a:hover {
-        color: #ddd;
+        border: none;
+        cursor: pointer;
       }
 
       a {
@@ -174,174 +81,143 @@
         color: white;
         cursor: pointer;
         transition: transform 0.2s, background 0.2s, color 0.2s;
-        display: flex;
-        align-items: center;
-        gap: 7px;
+        display: inline-block;
       }
 
       a i {
         transition: transform 0.2s, color 0.2s;
-        display: flex;
-        align-items: center;
-        gap: 7px;
+        display: inline-block;
       }
 
-      .navbar a:hover,
-      .navbar a:hover i,
-      .footer-bottom a i:hover {
-        transform: scale(1.05);
-        color: #cdcdcd;
-      }
 
       img.indian-icon {
-        width: 20px;
-        height: 20px;
+        width: 25px;
+        height: 25px;
       }
 
-      .logo img,
+      img.logo,
       .footer-logo img {
-        width: 180px;
-        height: 45px;
+        width: 210px;
+        height: 40px;
         object-fit: cover;
         padding-top: 5px;
       }
 
-      i {
-        color: white;
-        font-size: 22px;
-        cursor: pointer;
-        align-items: center;
-        text-align: center;
-      }
-
-      .content {
-        margin: 40px 100px 40px 100px;
-      }
-
-      .main-header {
-        font-size: 14px;
-        color: #007185;
-        margin-bottom: 20px;
-        margin-top: 40px;
-      }
-
-      .main-header span {
-        color: #007185;
-        font-weight: bold;
-      }
-
-      .header-bar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        margin-bottom: 30px;
-      }
-
-      .left-section {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
+      form {
+        max-width: 400px;
+        width: 90%;
+        margin: 80px auto 120px auto;
+        padding: 30px;
+        background-color: #1b2b3e;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        height: 550px;
       }
 
       h1 {
-        font-size: 28px;
-        margin-bottom: 25px;
-      }
-
-      .tabs {
-        display: flex;
-        align-items: center;
-        gap: 30px;
-        font-size: 15px;
-        border-bottom: 1px solid #ddd;
-        margin-bottom: 20px;
-      }
-
-      .tabs div {
-        padding: 10px 0;
-        cursor: pointer;
-        color: #007185;
-      }
-
-      .tabs .active {
-        border-bottom: 3px solid #1da1f2;
-        color: black;
-        font-weight: bold;
-      }
-
-      .tabs div:hover {
-        color: black;
-        font-weight: bold;
-        cursor: pointer;
-      }
-
-
-      .search-bar {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 30px;
-      }
-
-      .search-bar input {
-        width: 300px;
-        padding: 8px 12px;
-        border: 1px solid #ccc;
-        border-radius: 12px;
-        font-size: 14px;
-      }
-
-      .filter-dropdown {
-        margin-bottom: 20px;
-      }
-
-      .time-filter {
-        padding: 0;
-        background-color: whitesmoke;
-        color: black;
-        font-weight: bold;
-        border: none;
-        width: 115px;
-        cursor: pointer;
-        font-size: 14px;
-      }
-
-      .time-filter:focus {
-        outline: none;
-        box-shadow: none;
-      }
-
-      .empty-message {
-        font-size: 16px;
-        color: #333;
-        margin-top: 100px;
-      }
-
-      .shop {
-        display: block;
-        margin: auto;
-        margin-top: 50px;
-        margin-bottom: 400px;
-      }
-
-      .shop-btn {
-        display: block;
-        margin: auto;
-        background-color: #1b2b3e;
-        color: white;
-        padding: 12px 32px;
         text-align: center;
-        font-size: 18px;
-        border-radius: 25px;
-        text-decoration: none;
-        transition: background 0.3s ease, transform 0.2s;
-        min-width: 180px;
-        max-width: 300px;
+        margin-bottom: 60px;
+        color: #aeb8c7;
+        text-shadow: 1px 1px 3px black;
       }
 
-      .shop-btn:hover {
-        transform: scale(1.03);
+      input:-webkit-autofill,
+      input:-webkit-autofill:hover,
+      input:-webkit-autofill:focus,
+      textarea:-webkit-autofill,
+      textarea:-webkit-autofill:hover,
+      textarea:-webkit-autofill:focus,
+      select:-webkit-autofill,
+      select:-webkit-autofill:hover,
+      select:-webkit-autofill:focus {
+        -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+        box-shadow: 0 0 0px 1000px #ffffff inset !important;
+        -webkit-text-fill-color: #000000 !important;
+        transition: background-color 9999s ease-in-out 0s;
+      }
+
+
+      .input-group {
+        background: #fff;
+        width: 100%;
+        border-radius: 12px;
+        padding: 0;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        height: 45px;
+        padding-left: 15px;
+      }
+
+      .input-group i {
+        color: black;
+        font-size: 20px;
+        margin-right: 15px;
+      }
+
+      .input-group input {
+        border: none;
+        outline: none;
+        font-size: 14px;
+        width: 100%;
+        height: 100%;
+        padding: 0 10px 0 0;
+        border-radius: 12px;
+        box-sizing: border-box;
+        color: #333;
+      }
+
+      .options {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        height: 20px;
+        color: #1da1f2;
+      }
+
+      p {
+        color: white;
+        text-align: center;
+        font-size: 15px;
+      }
+
+      input[type="checkbox"] {
+        width: 13px;
+        height: 13px;
+        outline: none;
+        margin-right: 6px;
+      }
+
+      .checkbox {
+        display: flex;
+        align-items: center;
+        color: white;
+        font-size: 15px;
+        margin: 0;
+      }
+
+      .links {
+        color: #6cc7ff;
+        font-size: 15px;
+        text-decoration: none;
+        margin: 0;
+      }
+
+      button {
+        background-color: #5b708b;
+        color: white;
+        border: none;
+        border-radius: 12px;
+        font-size: 16px;
+        width: 100%;
+        height: 45px;
+        font-weight: bold;
+        padding: 10px 10px;
+        cursor: pointer;
+        margin-bottom: 40px;
+        transition: background 0.2s
       }
 
       a {
@@ -366,6 +242,32 @@
         color: whitesmoke;
         font-size: 13px;
         margin: 0 10px;
+      }
+
+
+      .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 25px;
+      }
+
+      .icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border: 1px solid white;
+        background-color: transparent;
+        border-radius: 50%;
+        padding: 6px;
+      }
+
+      .icon:hover {
+        background-color: #5b708b;
+        border: none;
+        color: #1b2b3e;
       }
 
       footer {
@@ -408,18 +310,8 @@
         background-color: rgba(255, 255, 255, 0.08);
       }
 
-      .store-buttons {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-        margin-top: 15px;
-        margin-bottom: 30px;
-      }
-
       .footer-logo {
         margin: 5px 0 5px 0;
-        display: flex;
-        justify-content: center;
       }
 
       .footer-bottom {
@@ -442,177 +334,88 @@
         cursor: pointer;
       }
 
-      @media screen and (max-width: 700px) {
+      @media screen and (max-width: 768px) {
+        nav.nav1 {
+          flex-direction: row;
+          flex-wrap: wrap;
+          height: 45px;
+          padding: 2px 15px;
+          justify-content: space-between;
+        }
 
-        .navbar {
-          display: flex;
+        ul.top {
+          flex-direction: row;
+          flex-wrap: nowrap;
+          gap: 6px;
+          font-size: 11px;
+        }
+
+        ul.top li {
           flex-direction: row;
           align-items: center;
-          justify-content: space-between;
-          padding: 15px;
-          gap: 18px;
-
         }
 
-        .logo img,
-        .footer-logo img {
-          width: 140px;
-          height: 45px;
+        i {
+          font-size: 15px !important;
         }
 
-        .location {
-          display: flex;
-          align-items: center;
-          gap: 8px;
-          font-size: 11px;
-          margin-bottom: 8px;
-          margin-right: 10px;
+        select {
+          font-size: 12px;
+          width: 83px;
         }
 
-        .location img.indian-icon {
+        img.indian-icon {
           width: 18px;
           height: 18px;
         }
 
-        .nav-search {
-          display: flex;
-          width: 100%;
-          max-width: 500px;
-          margin: 15px 0;
-        }
-
-        .nav-search select {
-          width: 60px;
-          padding: 8px;
-          font-size: 14px;
-        }
-
-        .nav-search input {
-          padding: 10px;
-          font-size: 14px;
-          flex: 1;
-        }
-
-        .nav-search button {
-          padding: 10px 15px;
-        }
-
-        .account,
-        .orders,
-        .cart {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          font-size: 12px;
-          margin-top: 10px;
-        }
-
-        .account,
-        .orders,
-        .cart {
-          margin-left: 10px;
-        }
-
-        .navbar>.account,
-        .navbar>.orders,
-        .navbar>.cart {
-          display: inline-flex;
-          margin: 10px 6px;
-        }
-
-        .navbar {
-          text-align: center;
-        }
-
-        .subnav {
-          font-size: 14px;
-          padding: 15px 10px;
-          display: flex;
-          flex-wrap: wrap;
-          gap: 20px;
-          /* Reduce space between items */
-          line-height: 0.3;
-          /* Tighten vertical spacing */
-          justify-content: space-evenly;
-        }
-
-        .subnav a {
-          padding: 2px 0;
-          /* Less padding for compact look */
-          display: inline-block;
-        }
-
-        .content {
-          margin: 20px 30px 20px 30px;
-        }
-
-        .search-bar {
-          flex-direction: row;
-          align-items: center;
-        }
-
-        .search-bar input {
-          width: 150px;
-        }
-
-        .empty-message {
-          font-size: 12px;
-          color: #333;
-          margin-top: 100px;
-        }
-
-        .shop {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          flex-direction: column;
-          height: calc(100vh - 250px);
-          /* Adjust for navbar + footer height */
-          margin: 0;
-          /* Remove huge margins */
-        }
-
-        .shop-btn {
-          display: inline-block;
-          width: 90%;
-          max-width: 280px;
-          padding: 12px 0;
-          font-size: 14px;
-          text-align: center;
-          border-radius: 30px;
-          cursor: pointer;
+        img.logo,
+        .footer-logo img {
+          width: 140px;
+          height: 35px;
         }
 
 
-        a {
-          text-decoration: none;
-          color: white;
+        form {
+          width: 70%;
+          height: 425px;
+          max-width: 400px;
+          padding: 25px 25px 75px 25px;
+          margin-bottom: 160px;
         }
 
-        .divider {
-          display: flex;
-          align-items: center;
-          justify-content: center;
+        h1 {
+          font-size: 24px;
+          margin-bottom: 40px;
         }
 
-        .line {
-          width: 100px;
-          border: none;
-          border-top: 1px solid whitesmoke;
-          margin: 0 5px;
+        .input-group {
+          height: 40px;
+          margin-bottom: 15px;
+          padding-left: 12px;
         }
 
-        .divider span {
-          color: whitesmoke;
+        .input-group i {
+          font-size: 16px;
+          margin-right: 10px;
+        }
+
+        .input-group input {
           font-size: 13px;
-          margin: 0 10px;
         }
+
+
 
         .checkbox,
         .links,
         .divider span,
         p {
           font-size: 13px;
+        }
+
+        .icon {
+          width: 25px;
+          height: 25px;
         }
 
         .options {
@@ -633,14 +436,15 @@
           width: 60px;
         }
 
-
-        table th {
-          font-size: 11px;
-          padding: 6px 25px;
+        .icon {
+          width: 35px;
+          height: 35px;
+          font-size: 14px;
         }
 
+        table th,
         table td {
-          font-size: 9px;
+          font-size: 8px;
           padding: 6px 25px;
         }
 
@@ -658,10 +462,6 @@
           margin-top: 0px;
         }
 
-        h4 {
-          font-size: 12px;
-        }
-
         ul.social-links {
           gap: 10px;
         }
@@ -675,135 +475,73 @@
           The BIG Monsoon Offer is LIVE! Get upto 50%*OFF</a>
       </marquee>
 
-      <div class="navbar">
-        <div class="logo">
-          <a href="index.html"><img src="cartzon.png" alt="Cartzon Logo"></a>
-        </div>
+      <nav class="nav1">
+        <ul class="top">
+          <li><a href="#"><i class="fa-solid fa-location-dot"></i></a></li>
+          <li>
+            <img class="indian-icon" src="https://cdn-icons-png.flaticon.com/128/9906/9906480.png" alt="India icon">
+          </li>
+          <li>
+            <select>
+              <option selected>EN - English</option>
+              <option>HI - हिंदी</option>
+              <option>TA - தமிழ்</option>
+              <option>TE - తెలుగు</option>
+              <option>MR - मराठी</option>
+              <option>BN - বাংলা</option>
+              <option>GU - ગુજરાતી</option>
+              <option>KN - ಕನ್ನಡ</option>
+              <option>ML - മലയാളം</option>
+              <option>PA - ਪੰਜਾਬੀ</option>
+            </select>
+          </li>
+        </ul>
 
-        <div class="location">
-          <i class="fa-solid fa-location-dot icon"></i>
-          <img class="indian-icon" src="https://cdn-icons-png.flaticon.com/128/9906/9906480.png" alt="India icon">
-          <span>Deliver to<br><b style="color: white; font-weight: bold; font-size: 16px;">India</b></span>
-        </div>
+        <img class="logo" src="cartzon.png" alt="Logo">
 
-        <div class="nav-search">
-          <select>
-            <option>All</option>
-            <option>Fashion</option>
-            <option>Electronics</option>
-            <option>Books</option>
-          </select>
-          <input type="text" placeholder="Search Cartzon.in" />
-          <button><i class="fa fa-search"></i></button>
-        </div>
-
-        <div class="account">
-          <a href="cartzon_login.html"><i class="fa fa-user icon"></i>
-            <span>Hello, sign in<br><b>Account & Lists</b></span></a>
-        </div>
-
-        <div class="orders">
-          <a href="cartzon_orders.html"><i class="fa fa-box icon"></i>
-            <span>Returns<br><b>& Orders</b></span></a>
-        </div>
-
-        <div class="cart">
-          <a href="cartzon_cart.html"><i class="fa fa-shopping-cart icon"></i>
-            <span><b>Cart</b></span></a>
-        </div>
-      </div>
-
-      <div class="subnav">
-        <div class="dropdown">
-          <a style="display: flex; align-items: center; gap: 5px" href="#">
-            <i class="fa fa-bars"></i> All
-          </a>
-          <div class="dropdown-content">
-            <a href="#">Mobiles</a>
-            <a href="#">Computers & Laptops</a>
-            <a href="#">Home & Kitchen</a>
-            <a href="#">Beauty</a>
-            <a href="#">Toys & Games</a>
-            <a href="#">Automotive</a>
-            <a href="#">Health & Wellness</a>
-            <a href="#">Watches</a>
-            <a href="#">Gift Cards</a>
-            <a href="#">Men's Fashion</a>
-            <a href="#">Women's Fashion</a>
-            <a href="#">Kids & Baby</a>
-            <a href="#">Footwear</a>
-            <a href="#">Jewellery</a>
-            <a href="#">Bags & Luggage</a>
-            <a href="#">Sports & Fitness</a>
-            <a href="#">Books & Stationery</a>
-            <a href="#">Grocery & Gourmet</a>
-            <a href="#">Pet Supplies</a>
-            <a href="#">Furniture</a>
-            <a href="#">Lighting & Decor</a>
-            <a href="#">Musical Instruments</a>
-            <a href="#">Industrial & Scientific</a>
-            <a href="#">Office Supplies</a>
-            <a href="#">Travel & Outdoor</a>
-            <a href="#">Cameras</a>
-            <a href="#">TV, Audio & Video</a>
-            <a href="#">Kitchen Appliances</a>
-            <a href="#">Garden & Outdoors</a>
-            <a href="#">Handmade</a>
-          </div>
-        </div>
-        <a href="#">Today's Deals</a>
-        <a href="#">Customer Service</a>
-        <a href="#">Gift Cards</a>
-        <a href="#">Sell</a>
-        <a href="#">Cartzon Pay</a>
-        <a href="#">Buy Again</a>
-        <a href="#">Cartzon Basics</a>
-      </div>
+        <ul class="top">
+          <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
+          <li><a href="#"><i class="fa-solid fa-gear"></i></a></li>
+          <li><a href="#"><i class="fa-solid fa-bell"></i></a></li>
+          <li><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
+          <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+        </ul>
+      </nav>
     </header>
-    <div class="content">
-      <div class="main-header">
-        My Account › <span>My Orders</span>
+    <form action="submit.php" method="post">
+      <h1>Log In</h1>
+      <div class="input-group">
+        <i class="fa-solid fa-user"></i>
+        <input type="text" placeholder="Username or Email address" required>
       </div>
 
-      <div class="header-bar">
-        <div class="left-section">
-          <h1>My Orders</h1>
-          <div class="tabs">
-            <div class="active">Orders</div>
-            <div>Buy Again</div>
-            <div>Not Yet Shipped</div>
-            <div>Cancelled Orders</div>
-          </div>
-        </div>
-        <div class="search-bar">
-          <input type="text" placeholder="Search all orders" />
-        </div>
+      <div class="input-group">
+        <i class="fa-solid fa-lock"></i>
+        <input type="password" placeholder="Password" required>
       </div>
 
-      <div class="filter-dropdown">
-        <label for="time-filter">Orders placed in </label>
-        <select class="time-filter">
-          <option selected>past 30 days</option>
-          <option>past 3 months</option>
-          <option>2025</option>
-          <option>2024</option>
-          <option>2023</option>
-          <option>2022</option>
-          <option>2021</option>
-
-        </select>
+      <div class="options">
+        <label class="checkbox">
+          <input type="checkbox"> Remember me
+        </label>
+        <a href="#" class="links"> Forgot Password?</a>
       </div>
 
-      <div class="empty-message">
-        Looks like you haven't placed an order in past 30 days.<br>
-        <a href="index.html" style="color: #007185;
-        text-decoration: none;">View orders in 2025</a>
+      <button type="submit">Login</button>
+      <div class="divider">
+        <hr class="line">
+        <span>Or login with</span>
+        <hr class="line">
       </div>
-      <div class="shop">
-        <a href="index.html" class="shop-btn">Continue Shopping</a>
-      </div>
-    </div>
 
+      <div class="social-icons">
+        <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" class="icon"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#" class="icon"><i class="fa-brands fa-google"></i></a>
+      </div><br><br>
+
+      <p>Do not have an account? <a href="#" class="links">Sign up now</a></p>
+    </form>
     <footer>
       <table>
         <tr>
@@ -845,16 +583,20 @@
 
       <div style="text-align: center; font-family: Arial, sans-serif; margin-top: 30px;">
         <h4>Our Largest Store At Your Fingertips</h4>
-        <div class="store-buttons">
-          <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" style="height: 35px;"></a>
-          <a href="#"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" style="height: 35px;"></a>
+        <div style="margin-top: 15px;">
+          <a href="#" target="_blank" style="margin: 5px;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" style="height: 35px;">
+          </a>
+          <a href="https://www.apple.com/in/app-store/" target="_blank" style="margin: 5px;">
+            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" style="height: 35px;">
+          </a>
         </div>
       </div>
 
       <hr>
 
       <div class="footer-logo">
-        <a href="index.html"><img src="cartzon.png" alt="Cartzon Logo"></a>
+        <img src="cartzon.png" alt="Amazon Logo" />
       </div>
 
       <div class="footer-bottom">
