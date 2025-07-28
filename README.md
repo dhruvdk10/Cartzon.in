@@ -1,12 +1,12 @@
 # Cartzon
 
-Cartzon is a front-end e-commerce website layout created using HTML, CSS, and Bootstrap.  
+Cartzon is a front-end e-commerce website layout created using HTML and CSS.  
 It is a static website designed for practice, learning, and portfolio showcasing purposes.
 
 ## Features
 - Fully responsive design
 - Modern UI layout for product listing
-- Bootstrap-based grid and components
+- Media Query used for responsiveness 
 
 ## Purpose
 This project is for **educational and personal learning** use only.  
