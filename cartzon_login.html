@@ -9,17 +9,12 @@
     <script src="https://kit.fontawesome.com/da1a8618a8.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-      }
-
       body {
         font-family: sans-serif;
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        background-color: whitesmoke;
+        background-color: white;
       }
 
       marquee {
@@ -34,74 +29,127 @@
         border: none;
       }
 
-      nav.nav1 {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background-color: #1b2b3e;
-        height: 60px;
-        padding: 0px 260px;
-      }
-
-      li {
-        display: flex;
-        align-items: center;
-      }
-
-      ul.top {
-        list-style: none;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 15px;
-        padding: 0;
+      * {
+        box-sizing: border-box;
         margin: 0;
-        font-size: 22px;
+        padding: 0;
       }
 
-      ul.bottom {
-        list-style: none;
+      body {
+        font-family: Arial, sans-serif;
+        background-color: white;
+      }
+
+      .navbar {
+        background-color: #1b2b3e;
         display: flex;
         align-items: center;
-        justify-content: center;
-        gap: 35px;
-        padding: 0;
-        margin: 0;
-      }
-
-      select {
-        background-color: #1b2b3e;
+        padding: 10px 20px;
         color: white;
-        border: none;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .location {
+        color: #ccc;
+        font-size: 10px;
+        ;
+      }
+
+      .navbar .location,
+      .navbar .account,
+      .navbar .orders,
+      .navbar .cart {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        font-size: 14px;
         cursor: pointer;
       }
 
-      a {
+      .navbar .nav-search {
+        display: flex;
+        flex: 1;
+        margin: 0 15px;
+        max-width: 600px;
+      }
+
+      .navbar select {
+        padding: 2px;
+        width: 50px;
+        text-align: center;
+        background-color: #ccc;
+        border: none;
+        border-radius: 4px 0 0 4px;
+      }
+
+      .navbar input {
+        flex: 1;
+        padding: 10px;
+        background-color: whitesmoke;
+        border: none;
+        outline: none;
+      }
+
+      .navbar button {
+        background-color: rgb(15, 155, 225);
+        border: none;
+        padding: 10px 15px;
+        border-radius: 0 4px 4px 0;
+        cursor: pointer;
+      }
+
+      .navbar .icon {
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+      }
+
+      .navbar a {
         text-decoration: none;
         color: white;
         cursor: pointer;
         transition: transform 0.2s, background 0.2s, color 0.2s;
-        display: inline-block;
+        display: flex;
+        align-items: center;
+        gap: 7px;
       }
 
-      a i {
+      . navbar a i {
         transition: transform 0.2s, color 0.2s;
-        display: inline-block;
+        display: flex;
+        align-items: center;
+        gap: 7px;
       }
 
+      .navbar a:hover,
+      .navbar a:hover i,
+      .footer-bottom a i:hover {
+        transform: scale(1.05);
+        color: #cdcdcd;
+      }
 
       img.indian-icon {
-        width: 25px;
-        height: 25px;
+        width: 20px;
+        height: 20px;
       }
 
-      img.logo,
+      .logo img,
       .footer-logo img {
-        width: 210px;
-        height: 40px;
+        width: 180px;
+        height: 45px;
         object-fit: cover;
         padding-top: 5px;
       }
+
+      i {
+        color: white;
+        font-size: 22px;
+        cursor: pointer;
+        align-items: center;
+        text-align: center;
+      }
+
 
       form {
         max-width: 400px;
@@ -244,32 +292,6 @@
         margin: 0 10px;
       }
 
-
-      .social-icons {
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-        margin-top: 25px;
-      }
-
-      .icon {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 40px;
-        height: 40px;
-        border: 1px solid white;
-        background-color: transparent;
-        border-radius: 50%;
-        padding: 6px;
-      }
-
-      .icon:hover {
-        background-color: #5b708b;
-        border: none;
-        color: #1b2b3e;
-      }
-
       footer {
         background-color: #1b2b3e;
         color: white;
@@ -310,8 +332,18 @@
         background-color: rgba(255, 255, 255, 0.08);
       }
 
+      .store-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 15px;
+        margin-bottom: 30px;
+      }
+
       .footer-logo {
         margin: 5px 0 5px 0;
+        display: flex;
+        justify-content: center;
       }
 
       .footer-bottom {
@@ -335,44 +367,84 @@
       }
 
       @media screen and (max-width: 768px) {
-        nav.nav1 {
-          flex-direction: row;
-          flex-wrap: wrap;
-          height: 45px;
-          padding: 2px 15px;
-          justify-content: space-between;
-        }
-
-        ul.top {
-          flex-direction: row;
-          flex-wrap: nowrap;
-          gap: 6px;
-          font-size: 11px;
-        }
-
-        ul.top li {
+        .navbar {
+          display: flex;
           flex-direction: row;
           align-items: center;
+          justify-content: space-between;
+          padding: 15px;
+          gap: 18px;
+
         }
 
-        i {
-          font-size: 15px !important;
+        .logo img,
+        .footer-logo img {
+          width: 140px;
+          height: 45px;
         }
 
-        select {
-          font-size: 12px;
-          width: 83px;
+        .location {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          font-size: 11px;
+          margin-bottom: 8px;
+          margin-right: 10px;
         }
 
-        img.indian-icon {
+        .location img.indian-icon {
           width: 18px;
           height: 18px;
         }
 
-        img.logo,
-        .footer-logo img {
-          width: 140px;
-          height: 35px;
+        .nav-search {
+          display: flex;
+          width: 100%;
+          max-width: 500px;
+          margin: 15px 0;
+        }
+
+        .nav-search select {
+          width: 60px;
+          padding: 8px;
+          font-size: 14px;
+        }
+
+        .nav-search input {
+          padding: 10px;
+          font-size: 14px;
+          flex: 1;
+        }
+
+        .nav-search button {
+          padding: 10px 15px;
+        }
+
+        .account,
+        .orders,
+        .cart {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          font-size: 12px;
+          margin-top: 10px;
+        }
+
+        .account,
+        .orders,
+        .cart {
+          margin-left: 10px;
+        }
+
+        .navbar>.account,
+        .navbar>.orders,
+        .navbar>.cart {
+          display: inline-flex;
+          margin: 10px 6px;
+        }
+
+        .navbar {
+          text-align: center;
         }
 
 
@@ -433,18 +505,63 @@
         }
 
         .line {
+       a {
+          text-decoration: none;
+          color: white;
+        }
+
+        .divider {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .line {
+          width: 100px;
+          border: none;
+          border-top: 1px solid whitesmoke;
+          margin: 0 5px;
+        }
+
+        .divider span {
+          color: whitesmoke;
+          font-size: 13px;
+          margin: 0 10px;
+        }
+
+        .checkbox,
+        .links,
+        .divider span,
+        p {
+          font-size: 13px;
+        }
+
+        .options {
+          flex-direction: row;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 20px;
+          height: 20px;
+        }
+
+        button {
+          font-size: 15px;
+          height: 42px;
+        }
+
+        .line {
           width: 60px;
         }
 
-        .icon {
-          width: 35px;
-          height: 35px;
-          font-size: 14px;
+
+        table th {
+          font-size: 11px;
+          padding: 6px 25px;
         }
 
-        table th,
         table td {
-          font-size: 8px;
+          font-size: 9px;
           padding: 6px 25px;
         }
 
@@ -462,6 +579,10 @@
           margin-top: 0px;
         }
 
+        h4 {
+          font-size: 12px;
+        }
+
         ul.social-links {
           gap: 10px;
         }
@@ -475,38 +596,43 @@
           The BIG Monsoon Offer is LIVE! Get upto 50%*OFF</a>
       </marquee>
 
-      <nav class="nav1">
-        <ul class="top">
-          <li><a href="#"><i class="fa-solid fa-location-dot"></i></a></li>
-          <li>
-            <img class="indian-icon" src="https://cdn-icons-png.flaticon.com/128/9906/9906480.png" alt="India icon">
-          </li>
-          <li>
-            <select>
-              <option selected>EN - English</option>
-              <option>HI - हिंदी</option>
-              <option>TA - தமிழ்</option>
-              <option>TE - తెలుగు</option>
-              <option>MR - मराठी</option>
-              <option>BN - বাংলা</option>
-              <option>GU - ગુજરાતી</option>
-              <option>KN - ಕನ್ನಡ</option>
-              <option>ML - മലയാളം</option>
-              <option>PA - ਪੰਜਾਬੀ</option>
-            </select>
-          </li>
-        </ul>
+      <div class="navbar">
+        <div class="logo">
+          <a href="index.html"><img src="cartzon.png" alt="Cartzon Logo"></a>
+        </div>
 
-        <img class="logo" src="cartzon.png" alt="Logo">
+        <div class="location">
+          <i class="fa-solid fa-location-dot icon"></i>
+          <img class="indian-icon" src="https://cdn-icons-png.flaticon.com/128/9906/9906480.png" alt="India icon">
+          <span>Deliver to<br><b style="color: white; font-weight: bold; font-size: 16px;">India</b></span>
+        </div>
 
-        <ul class="top">
-          <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
-          <li><a href="#"><i class="fa-solid fa-gear"></i></a></li>
-          <li><a href="#"><i class="fa-solid fa-bell"></i></a></li>
-          <li><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
-          <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
-        </ul>
-      </nav>
+        <div class="nav-search">
+          <select>
+            <option>All</option>
+            <option>Fashion</option>
+            <option>Electronics</option>
+            <option>Books</option>
+          </select>
+          <input type="text" placeholder="Search Cartzon.in" />
+          <button><i class="fa fa-search"></i></button>
+        </div>
+
+        <div class="account">
+          <a href="cartzon_login.html"><i class="fa fa-user icon"></i>
+            <span>Hello, sign in<br><b>Account & Lists</b></span></a>
+        </div>
+
+        <div class="orders">
+          <a href="cartzon_orders.html"><i class="fa fa-box icon"></i>
+            <span>Returns<br><b>& Orders</b></span></a>
+        </div>
+
+        <div class="cart">
+          <a href="cartzon_cart.html"><i class="fa fa-shopping-cart icon"></i>
+            <span><b>Cart</b></span></a>
+        </div>
+      </div>
     </header>
     <form action="submit.php" method="post">
       <h1>Log In</h1>
